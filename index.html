@@ -7,14 +7,56 @@
 
     <!-- CSS Eksternal -->
      <link rel="stylesheet" href="CSS/style.css">
+
+     <!-- Tailwind CSS -->
+       <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+
+<body class="flex flex-col items-center justify-evenly min-h-screen bg-gray-100">
     <header>
-        <h1>Todo List</h1>
+        <h1 class="text-3xl"><p style="color:rgb(115, 188, 213)"><b>Todo List</b></p></h1>
     </header>
-    <main></main>
+    <main class="py-[20px] rounded">
+        <!-- Input Todo -->
+         <form class="flex justify-between p-[8px]" onsubmit="addTodo(); return false;">
+            <div class="flex gap-[8px]">
+                 <input type="text" id="todo-input" class="border rounded p-[4px] bg-gray-500" placeholder="Add a todo...">
+                 <input type="date" id="select-date-input" class="border rounded p-[4px] bg-gray-500" placeholder="select date">
+            </div>
+
+            <button type="button" class="bg-violet-600 text-violet-100 p-[10px] rounded w-[text-3xl]" onclick="addTodo();">+</button>
+         </form>
+
+         <!-- Todo Action -->
+          <section class="flex justify-between p-[8px]">
+            <div class="flex gap-[8px]">
+
+                 <button class="bg-gray-700 text-blue-200 p-[8px] rounded"><b>FILTER</b></button>
+            </div>
+
+            <button class ="bg-violet-600 text-violet-100 p-[5px] rounded"><b>DELETE ALL</b></button>
+          </section>
+
+          <!-- Todo List -->
+           <div id="todolist">
+            <Table class="w-full text-justify-center">
+                <tbody>
+                    <tr>
+                        <td style="color:rgb(157, 214, 248)"><b>Task</b></td>
+                        <td style="color:rgb(157, 214, 248)"><b>Due Date</b></td>
+                        <td style="color:rgb(157, 214, 248)"><b>Status</b></td>
+                        <td style="color:rgb(157, 214, 248)"><b>Action</b></td>
+                </tbody>
+            </Table>
+            <p style="color:rgb(123, 173, 201)">No Task Found</p>
+           </div>
+
+    </main>
     <footer>
-        <span>@ 2025 Aulya Febrianingtyas. All rights reserved.</span>
+        <span class="text-gray-400">@ 2025 Aulya Febrianingtyas. All rights reserved.</span>
     </footer>
+
+    <!-- Javastript Eksternal -->
+     <script src="js/script.js"></script>
 </body>
 </html>
